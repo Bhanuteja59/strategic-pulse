@@ -1,67 +1,30 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
-function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let start = 0;
-    const endValue = end;
-    if (start === endValue) return;
-
-    let totalDuration = 2000;
-    let incrementTime = (totalDuration / endValue) * 2;
-    
-    if(endValue > 100) {
-      incrementTime = totalDuration / 100;
-    }
-
-    const timer = setInterval(() => {
-      start += endValue > 100 ? Math.ceil(endValue / 100) : 1;
-      if (start > endValue) start = endValue;
-      setCount(start);
-      if (start === endValue) clearInterval(timer);
-    }, incrementTime);
-
-    return () => clearInterval(timer);
-  }, [end]);
-
-  return (
-    <span className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white">
-      {count}{suffix}
-    </span>
-  );
-}
-
 export default function TrustIndicators() {
-  const stats = [
-    { label: "Survey Responses", value: 50, suffix: "K+" },
-    { label: "Field Teams", value: 120, suffix: "+" },
-    { label: "Regions Covered", value: 20, suffix: "+" },
-    { label: "Data Accuracy", value: 95, suffix: "%" },
-  ];
-
   return (
-    <section className="py-20 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex flex-col items-center justify-center text-center space-y-2"
-            >
-              <Counter end={stat.value} suffix={stat.suffix} />
-              <p className="text-sm md:text-base font-semibold text-slate-500 dark:text-slate-400">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
+    <section className="bg-white py-16 px-6 border-b border-gray-200">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-10">
+           <h2 className="text-3xl font-bold text-gray-900 mb-3">
+             Our Dashboards
+           </h2>
+           <div className="w-16 h-1 bg-[#FFC30B] mx-auto rounded"></div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-gray-50 p-6 border-t-4 border-[#B30006] rounded shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-bold text-xl text-[#B30006] mb-2">Digital Bharath Politics</h3>
+            <p className="text-gray-600 font-medium">Track sentiments across constituencies easily.</p>
+          </div>
+          <div className="bg-gray-50 p-6 border-t-4 border-[#FFC30B] rounded shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-bold text-xl text-gray-900 mb-2">Telangana Municipal Dashboard</h3>
+            <p className="text-gray-600 font-medium">Local issue tracking and corporator details.</p>
+          </div>
+          <div className="bg-gray-50 p-6 border-t-4 border-[#FFC30B] rounded shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-bold text-xl text-gray-900 mb-2">Telangana Ward Elections</h3>
+            <p className="text-gray-600 font-medium">Ward-wise demographic distribution data.</p>
+          </div>
+          <div className="bg-gray-50 p-6 border-t-4 border-[#B30006] rounded shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-bold text-xl text-[#B30006] mb-2">Caste Distribution</h3>
+            <p className="text-gray-600 font-medium">Simple breakdowns of demographics.</p>
+          </div>
         </div>
       </div>
     </section>
