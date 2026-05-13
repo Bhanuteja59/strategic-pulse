@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Strategic Pulse | Understanding People. Empowering Leadership.",
-  description: "We help organizations and leaders make smarter decisions through public insights, surveys, and constituency intelligence.",
-  keywords: ["election survey company", "civic tech startup", "constituency analytics", "voter intelligence platform", "political campaign analytics", "public opinion survey platform"],
+  title: "Strategy Pulse | Power. Strategy. Every Day.",
+  description: "A Political Intelligence & Leadership Enablement Company built for modern Indian politics. We empower political leaders with systems, intelligence, and execution frameworks that run 365 days a year — not just during elections.",
+  keywords: ["strategy pulse", "political intelligence", "indian politics operating system", "sops for political leaders", "constituency analytics", "election war room", "voter intelligence"],
 };
 
 export default function RootLayout({

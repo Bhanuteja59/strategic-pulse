@@ -1,121 +1,30 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { 
-  ClipboardList, 
-  Map, 
-  Users, 
-  LineChart, 
-  MessageSquare, 
-  Zap, 
-  Smartphone, 
-  Lightbulb 
-} from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
 export default function Services() {
-  const services = [
-    {
-      title: "Public Opinion Surveys",
-      description: "Comprehensive polling and surveying to gauge public sentiment accurately.",
-      icon: <ClipboardList className="w-6 h-6" />,
-      color: "from-teal-500/10 to-transparent",
-      iconColor: "text-teal-400"
-    },
-    {
-      title: "Constituency Analysis",
-      description: "Deep demographic and sentiment breakdowns by specific regions and booths.",
-      icon: <Map className="w-6 h-6" />,
-      color: "from-orange-500/10 to-transparent",
-      iconColor: "text-orange-400"
-    },
-    {
-      title: "Field Intelligence",
-      description: "Deploy and manage on-ground teams for direct data collection.",
-      icon: <Users className="w-6 h-6" />,
-      color: "from-blue-500/10 to-transparent",
-      iconColor: "text-blue-400"
-    },
-    {
-      title: "Campaign Analytics",
-      description: "Track the performance and reach of initiatives in real-time.",
-      icon: <LineChart className="w-6 h-6" />,
-      color: "from-purple-500/10 to-transparent",
-      iconColor: "text-purple-400"
-    },
-    {
-      title: "Citizen Engagement",
-      description: "Tools to foster direct two-way communication with the public.",
-      icon: <MessageSquare className="w-6 h-6" />,
-      color: "from-pink-500/10 to-transparent",
-      iconColor: "text-pink-400"
-    },
-    {
-      title: "Real-Time Reporting",
-      description: "Live dashboards that synthesize complex data into actionable insights.",
-      icon: <Zap className="w-6 h-6" />,
-      color: "from-yellow-500/10 to-transparent",
-      iconColor: "text-yellow-400"
-    },
-    {
-      title: "Mobile Data Collection",
-      description: "Secure mobile applications for field agents to capture data offline.",
-      icon: <Smartphone className="w-6 h-6" />,
-      color: "from-green-500/10 to-transparent",
-      iconColor: "text-green-400"
-    },
-    {
-      title: "Strategic Insights",
-      description: "AI-driven recommendations based on historical and current trends.",
-      icon: <Lightbulb className="w-6 h-6" />,
-      color: "from-indigo-500/10 to-transparent",
-      iconColor: "text-indigo-400"
-    }
-  ];
-
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-      <div className="container mx-auto px-4 md:px-6">
-        
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-teal-500 dark:text-teal-400 font-semibold tracking-wider uppercase text-sm mb-3">Our Services</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
-            Intelligence capabilities for modern leadership.
-          </h3>
-          <p className="text-lg text-slate-600 dark:text-slate-400">
-            A comprehensive suite of tools designed to gather, analyze, and act upon public intelligence.
-          </p>
+    <section className="bg-white py-16 px-6 border-b border-gray-200" id="services">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-10">
+           <h2 className="text-3xl font-bold text-gray-900 mb-3">
+             Our Services in Andhra Pradesh
+           </h2>
+           <div className="w-24 h-1 bg-[#B30006] mx-auto rounded"></div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <Card className="h-full group hover:shadow-xl transition-all duration-300 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 hover:-translate-y-1.5 overflow-hidden relative rounded-2xl">
-                {/* Hover Gradient Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
-                
-                <CardHeader className="relative z-10">
-                  <div className={`w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200/50 dark:border-slate-800 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 ${service.iconColor}`}>
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-teal-500 dark:group-hover:text-teal-400 transition-colors">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="relative z-10">
-                  <CardDescription className="text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-gray-50 p-6 border-l-4 border-[#FFC30B] border-y border-r border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-bold text-xl text-[#B30006] mb-2">Assembly & Parliamentary Surveys</h3>
+            <p className="text-gray-700 font-medium">Polling for Godavari, Rayalaseema, North Andhra, and South Coastal regions to know exactly what voters think.</p>
+          </div>
+          <div className="bg-gray-50 p-6 border-l-4 border-[#B30006] border-y border-r border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-bold text-xl text-[#B30006] mb-2">Booth-Level Demographics</h3>
+            <p className="text-gray-700 font-medium">We track caste equations and voting blocks at the booth level.</p>
+          </div>
+          <div className="bg-gray-50 p-6 border-l-4 border-[#FFC30B] border-y border-r border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-bold text-xl text-[#B30006] mb-2">Panchayat & Ward Intelligence</h3>
+            <p className="text-gray-700 font-medium">Find out local issues like water and roads before they become big problems.</p>
+          </div>
+          <div className="bg-gray-50 p-6 border-l-4 border-[#B30006] border-y border-r border-gray-200 rounded shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="font-bold text-xl text-[#B30006] mb-2">Ticket Aspirant Benchmarking</h3>
+            <p className="text-gray-700 font-medium">Compare leaders to see who has the best chance to win elections.</p>
+          </div>
         </div>
       </div>
     </section>
