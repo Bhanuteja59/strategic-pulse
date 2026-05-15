@@ -10,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Strategy Pulse | Power. Strategy. Every Day.",
-  description: "A Political Intelligence & Leadership Enablement Company built for modern Indian politics. We empower political leaders with systems, intelligence, and execution frameworks that run 365 days a year — not just during elections.",
-  keywords: ["strategy pulse", "political intelligence", "indian politics operating system", "sops for political leaders", "constituency analytics", "election war room", "voter intelligence"],
+  title: "Strategy Pulse | Empowering Grassroots Volunteers & Community Workers",
+  description: "Supporting dedicated political volunteers, booth-level agents, and community organizers with micro-jobs, smart execution tools, and actionable recognition.",
+  keywords: ["grassroots empowerment", "political volunteers", "community support", "booth agents", "micro-jobs for volunteers", "strategy pulse"],
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} scroll-smooth dark`}>
-      <body className="min-h-screen flex flex-col bg-background text-foreground selection:bg-teal selection:text-white transition-colors duration-300">
+      <body className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#0b0f19] text-slate-900 dark:text-slate-100 selection:bg-indigo-500 selection:text-white transition-colors duration-300">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
