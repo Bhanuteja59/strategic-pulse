@@ -1,59 +1,97 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative bg-white py-24 px-6 text-center border-b border-gray-200 mt-16 overflow-hidden" id="hero">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image 
-          src="/images/bg-politics.png" 
-          alt="Indian Politics Abstract Background" 
-          fill
-          className="object-cover opacity-15"
-          priority
-        />
-        {/* Gradient overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/80 to-white/90"></div>
-      </div>
-
-      <div className="max-w-4xl mx-auto relative z-10">
-        <div className="inline-block mb-4 px-3 py-1 bg-[#FFC30B]/20 border border-[#FFC30B]/50 rounded-full">
-          <span className="text-[#B30006] font-bold text-sm tracking-wide uppercase">Power. Strategy. Every Day.</span>
-        </div>
+    <section className="relative pt-36 pb-24 px-6 overflow-hidden bg-slate-50 dark:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] dark:from-indigo-950/40 dark:via-[#0b0f19] dark:to-[#0b0f19] transition-colors duration-300" id="hero">
+      {/* Background glow effects */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-r from-cyan-500/20 to-indigo-500/20 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+      
+      <div className="max-w-6xl mx-auto text-center relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-block mb-6 px-4 py-1.5 glass-panel rounded-full border border-cyan-500/30 bg-cyan-500/10"
+        >
+          <span className="text-cyan-600 dark:text-cyan-400 font-bold text-xs tracking-wider uppercase flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse"></span>
+            Empowering Volunteers & Booth Workers
+          </span>
+        </motion.div>
         
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-          Strategy Pulse: Political Intelligence for Andhra Pradesh
-        </h1>
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 dark:text-white mb-8 leading-[1.15] tracking-tight max-w-4xl mx-auto transition-colors duration-300"
+        >
+          Supporting the <span className="gradient-text">Grassroots Champions</span> of Politics
+        </motion.h1>
         
-        <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto font-medium">
-          We help political leaders run powerful campaigns with real grassroots data, voter sentiment surveys, and simple 365-day execution strategies.
-        </p>
+        <motion.p 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-lg md:text-xl text-slate-700 dark:text-slate-300 mb-12 max-w-3xl mx-auto font-normal leading-relaxed transition-colors duration-300"
+        >
+          Behind every successful campaign are the dedicated volunteers doing the vital daily tasks. We empower booth workers and community organizers with micro-jobs, smart management tools, and the recognition they truly deserve.
+        </motion.p>
         
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-          <a href="#contact" className="bg-[#B30006] text-white px-8 py-3.5 rounded shadow-lg text-lg font-bold hover:bg-[#8A0004] transition-colors">
-            Start Your Campaign
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="flex flex-col sm:flex-row justify-center items-center gap-5 mb-20"
+        >
+          <a 
+            href="#contact" 
+            className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-indigo-600 text-white px-8 py-4 rounded-xl shadow-xl shadow-indigo-500/25 text-lg font-bold hover:scale-105 transition-all duration-300 text-center"
+          >
+            Join Volunteer Network
           </a>
-          <a href="#approach" className="bg-white text-gray-900 border-2 border-[#FFC30B] px-8 py-3.5 rounded shadow-sm text-lg font-bold hover:bg-[#FFC30B]/10 transition-colors">
-            Learn Our Strategy
+          <a 
+            href="#services" 
+            className="w-full sm:w-auto glass-panel text-slate-800 dark:text-white border border-black/10 dark:border-white/20 px-8 py-4 rounded-xl text-lg font-bold hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-300 text-center"
+          >
+            Explore Micro-Jobs
           </a>
-        </div>
+        </motion.div>
 
-        {/* Featured Image */}
-        <div className="relative mx-auto max-w-3xl rounded-xl overflow-hidden shadow-2xl border-4 border-white">
-          <Image 
-            src="/images/survey-engagement.png" 
-            alt="Political Survey Engagement in Andhra Pradesh" 
-            width={800}
-            height={450}
-            className="w-full h-auto object-cover"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-             <p className="text-white text-sm font-bold text-left flex items-center gap-2">
-               <span className="w-2 h-2 rounded-full bg-[#FFC30B]"></span>
-               Live Grassroots Voter Engagement
-             </p>
+        {/* Featured Showcase Image */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="relative mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-2xl border border-black/10 dark:border-white/10 glass-panel p-2"
+        >
+          <div className="relative rounded-xl overflow-hidden aspect-video">
+            <Image 
+              src="/images/volunteer_community_support.png" 
+              alt="Diverse grassroots political volunteers collaborating" 
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+               <div>
+                 <span className="px-3 py-1 bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block">
+                   Live Community Impact
+                 </span>
+                 <h3 className="text-white text-xl md:text-2xl font-bold text-left">
+                   Connecting local organizers with real-time opportunities
+                 </h3>
+               </div>
+               <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl border border-white/20 flex items-center gap-3">
+                 <div className="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></div>
+                 <span className="text-white font-semibold text-sm">Active Network</span>
+               </div>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
