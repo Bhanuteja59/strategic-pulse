@@ -11,3 +11,16 @@ body {
   font-family: sans-serif;
   scroll-behavior: smooth;
 }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 3s ease-in-out forwards;
+}
