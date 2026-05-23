@@ -48,11 +48,11 @@ function Navbar() {
   return (
     <header className="bg-[#B30006] text-white p-4 fixed top-0 left-0 right-0 z-50 shadow-md border-b-2 border-[#FFC30B]">
       <div className="container mx-auto flex items-center justify-between">
-        <a href="#hero" className="font-extrabold text-xl lg:text-2xl tracking-tight flex items-center gap-2 whitespace-nowrap">
+        <a href="#hero" className="font-extrabold text-lg sm:text-xl lg:text-2xl tracking-tight flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
           <img 
-            src="/images/logo.jpg" 
+            src="/images/logo.png" 
             alt="Strategic Pulse Logo" 
-            className="rounded-full w-8 h-8 lg:w-10 lg:h-10 object-cover" 
+            className="rounded-full w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-cover" 
           />
           <span className="text-[#FFC30B]">Strategy</span> Pulse
         </a>
@@ -70,10 +70,10 @@ function Navbar() {
         </nav>
 
         <a 
-          href="#contact" 
-          className="bg-[#FFC30B] text-[#B30006] px-3 py-1.5 rounded shadow text-xs lg:text-sm font-bold hover:bg-yellow-400 transition-colors whitespace-nowrap"
+          href="#footer" 
+          className="bg-[#FFC30B] text-[#B30006] px-2.5 py-1 sm:px-3 sm:py-1.5 rounded shadow text-[10px] sm:text-xs lg:text-sm font-bold hover:bg-yellow-400 transition-colors whitespace-nowrap"
         >
-          Join / Support Today
+          Join / Support
         </a>
       </div>
     </header>
@@ -87,19 +87,19 @@ function Hero() {
   return (
     <section className="pt-28 pb-20 px-6 bg-gray-50 border-b border-gray-200" id="hero">
       <div className="max-w-6xl mx-auto text-center">
-        <div className="inline-block mb-5 px-4 py-1.5 bg-[#FFC30B]/20 border border-[#FFC30B] rounded-full">
-          <span className="text-[#B30006] font-bold text-xs tracking-wider uppercase flex items-center gap-2">
+        <div className="inline-block mb-5 px-3 py-1 sm:px-4 sm:py-1.5 bg-[#FFC30B]/20 border border-[#FFC30B] rounded-full">
+          <span className="text-[#B30006] font-bold text-[10px] sm:text-xs tracking-wider uppercase flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#B30006] animate-pulse"></span>
             Empowering Volunteers &amp; Booth Workers
           </span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight max-w-4xl mx-auto">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight max-w-4xl mx-auto">
           Supporting the{" "}
           <span className="text-[#B30006]">Grassroots Champions</span> of Politics
         </h1>
 
-        <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
           Behind every successful campaign are the dedicated volunteers doing the vital daily tasks. We empower booth workers and community organizers with micro-jobs, smart management tools, and the recognition they truly deserve.
         </p>
 
@@ -120,25 +120,25 @@ function Hero() {
 
         {/* Showcase Image */}
         <div className="relative mx-auto max-w-4xl rounded-xl overflow-hidden shadow-2xl border border-gray-200">
-          <div className="relative aspect-video">
+          <div className="relative aspect-[4/3] sm:aspect-video">
             <img
               src="/images/volunteer_community_support.png"
               alt="Diverse grassroots political volunteers collaborating"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-70"></div>
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
               <div>
-                <span className="px-3 py-1 bg-[#FFC30B] text-[#B30006] rounded text-xs font-bold uppercase tracking-wider mb-2 inline-block">
+                <span className="px-2.5 py-0.5 sm:px-3 sm:py-1 bg-[#FFC30B] text-[#B30006] rounded text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-1.5 sm:mb-2 inline-block">
                   Live Community Impact
                 </span>
-                <h3 className="text-white text-xl md:text-2xl font-bold text-left">
+                <h3 className="text-white text-base sm:text-xl md:text-2xl font-bold text-left leading-snug">
                   Connecting local organizers with real-time opportunities
                 </h3>
               </div>
-              <div className="bg-black/60 backdrop-blur-sm px-4 py-2 rounded border border-white/20 flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-green-400 animate-ping"></div>
-                <span className="text-white font-semibold text-sm">Active Network</span>
+              <div className="bg-black/60 backdrop-blur-sm px-2.5 py-1 sm:px-4 sm:py-2 rounded border border-white/20 flex items-center gap-2 sm:gap-3 shrink-0">
+                <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-400 animate-ping"></div>
+                <span className="text-white font-semibold text-xs sm:text-sm">Active Network</span>
               </div>
             </div>
           </div>
@@ -194,6 +194,15 @@ function VolunteerCarousel() {
     }
   };
 
+  // Premium Auto-Play Effect (5-second interval)
+  // Re-creates the interval on slide change so manual interactions reset the idle timer.
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [currentSlide]);
+
   return (
     <section className="py-20 px-6 bg-gray-50 border-b border-gray-200">
       <div className="max-w-6xl mx-auto">
@@ -209,8 +218,8 @@ function VolunteerCarousel() {
           </p>
         </div>
 
-        <div className="relative bg-white rounded-xl border border-gray-200 shadow-md p-4 md:p-6">
-          <div className="relative rounded-lg overflow-hidden aspect-[16/9] md:aspect-[21/9]">
+        <div className="relative bg-white rounded-xl border border-gray-200 shadow-md p-3 sm:p-4 md:p-6">
+          <div className="relative rounded-lg overflow-hidden aspect-[4/5] sm:aspect-[16/10] md:aspect-[21/9]">
             {slides.map((slide, idx) => (
               <div
                 key={slide.id}
@@ -221,16 +230,16 @@ function VolunteerCarousel() {
                   alt={slide.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent opacity-85"></div>
 
-                <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 max-w-2xl">
-                  <span className="px-3 py-1 bg-[#FFC30B] text-[#B30006] rounded text-xs font-bold uppercase tracking-wider mb-3 inline-block">
+                <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 md:bottom-10 md:left-10 md:right-10 max-w-2xl">
+                  <span className="px-2 py-0.5 sm:px-3 sm:py-1 bg-[#FFC30B] text-[#B30006] rounded text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 md:mb-3 inline-block">
                     {slide.tag}
                   </span>
-                  <h3 className="text-2xl md:text-4xl font-extrabold text-white mb-2 leading-tight">
+                  <h3 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-white mb-1.5 md:mb-2 leading-tight">
                     {slide.title}
                   </h3>
-                  <p className="text-gray-200 text-sm md:text-base leading-relaxed">
+                  <p className="text-gray-200 text-xs sm:text-sm md:text-base leading-relaxed">
                     {slide.description}
                   </p>
                 </div>
@@ -238,36 +247,36 @@ function VolunteerCarousel() {
             ))}
           </div>
 
-          {/* Controls */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none z-10">
+          {/* Controls & Indicators */}
+          <div className="flex justify-between items-center mt-6 max-w-[280px] sm:max-w-xs mx-auto px-4">
             <button
               onClick={prevSlide}
-              className="pointer-events-auto w-12 h-12 rounded-full bg-black/60 flex items-center justify-center text-white hover:bg-black/80 transition-all duration-300 shadow-lg border border-white/20"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-[#B30006] hover:bg-gray-50 hover:text-red-700 active:scale-95 transition-all duration-300 shadow-sm"
               aria-label="Previous Slide"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
+            
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              {slides.map((slide, idx) => (
+                <button
+                  key={slide.id}
+                  onClick={() => setCurrentSlide(idx)}
+                  className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+                    currentSlide === idx ? "w-6 sm:w-8 bg-[#B30006]" : "w-1.5 sm:w-2 bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                ></button>
+              ))}
+            </div>
+
             <button
               onClick={nextSlide}
-              className="pointer-events-auto w-12 h-12 rounded-full bg-black/60 flex items-center justify-center text-white hover:bg-black/80 transition-all duration-300 shadow-lg border border-white/20"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-[#B30006] hover:bg-gray-50 hover:text-red-700 active:scale-95 transition-all duration-300 shadow-sm"
               aria-label="Next Slide"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
-          </div>
-
-          {/* Indicators */}
-          <div className="flex justify-center items-center gap-2 mt-6">
-            {slides.map((slide, idx) => (
-              <button
-                key={slide.id}
-                onClick={() => setCurrentSlide(idx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  currentSlide === idx ? "w-8 bg-[#B30006]" : "w-2 bg-gray-300 hover:bg-gray-400"
-                }`}
-                aria-label={`Go to slide ${idx + 1}`}
-              ></button>
-            ))}
           </div>
         </div>
       </div>
@@ -801,7 +810,7 @@ function FAQ() {
 
                 <div 
                   className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-40 border-t border-gray-100" : "max-h-0"
+                    isOpen ? "max-h-[500px] border-t border-gray-100" : "max-h-0"
                   }`}
                 >
                   <p className="p-6 text-gray-600 font-medium pl-14 leading-relaxed text-base">
@@ -858,24 +867,24 @@ function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-[#7A0004] via-[#B30006] to-[#D90416] text-white border-t border-[#FFC30B]/20">
-      {/* Glow Effects */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-[#FFC30B]/15 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-black/20 blur-3xl rounded-full"></div>
+    <footer className="relative overflow-hidden bg-gradient-to-br from-[#7A0004] via-[#B30006] to-[#D90416] text-white border-t border-[#FFC30B]/20" id="footer">
+      {/* Premium Glow Effects */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-[#FFC30B]/10 blur-3xl rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-black/20 blur-3xl rounded-full pointer-events-none"></div>
 
       <div className="relative container mx-auto px-6 py-16 max-w-6xl">
         {/* Responsive Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12 items-center">
           
-          {/* Column 1: Brand details & Socials (5 cols) */}
-          <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left">
+          {/* Column 1: Brand details & Socials (7 cols) */}
+          <div className="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left">
             <p className="uppercase tracking-[0.25em] text-[10px] text-[#FFC30B] font-bold mb-3">
               Grassroots • Technology • Empowerment
             </p>
-            <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-4">
+            <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-4 text-white">
               <span className="text-[#FFC30B]">Strategy</span> Pulse
             </h3>
-            <p className="text-white/80 text-sm md:text-base leading-relaxed mb-6 max-w-sm">
+            <p className="text-white/85 text-sm md:text-base leading-relaxed mb-6 max-w-lg">
               Building the future of grassroots political empowerment with real support,
               digital recognition, and opportunities for every volunteer.
             </p>
@@ -899,6 +908,7 @@ function Footer() {
                   hover:from-pink-500
                   hover:via-red-500
                   hover:to-yellow-400
+                  hover:border-transparent
                   transition-all duration-300
                   shadow-md
                 "
@@ -920,6 +930,7 @@ function Footer() {
                   flex items-center justify-center
                   hover:scale-110 hover:-translate-y-1
                   hover:bg-blue-600
+                  hover:border-transparent
                   transition-all duration-300
                   shadow-md
                 "
@@ -941,6 +952,7 @@ function Footer() {
                   flex items-center justify-center
                   hover:scale-110 hover:-translate-y-1
                   hover:bg-black
+                  hover:border-transparent
                   transition-all duration-300
                   shadow-md
                 "
@@ -950,38 +962,11 @@ function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Links (3 cols) */}
-          <div className="md:col-span-3 flex flex-col items-center md:items-start">
-            <h4 className="text-sm uppercase tracking-widest text-[#FFC30B] font-extrabold mb-6">
-              Quick Links
-            </h4>
-            <div className="flex flex-col gap-3.5 items-center md:items-start w-full">
-              {footerLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="
-                    text-white/80 hover:text-[#FFC30B] 
-                    hover:translate-x-1.5 transition-all duration-300
-                    text-sm font-semibold flex items-center gap-2
-                  "
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FFC30B]/40"></span>
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Column 3: Contact/Support card (4 cols) */}
-          <div className="md:col-span-4 flex flex-col items-center md:items-start w-full">
-            <h4 className="text-sm uppercase tracking-widest text-[#FFC30B] font-extrabold mb-6">
-              Contact & Support
-            </h4>
-            
-            <div className="relative w-full max-w-sm bg-white/[0.04] backdrop-blur-xl p-6 rounded-3xl border border-white/10 hover:border-[#FFC30B]/30 transition-all duration-300 shadow-2xl group">
+          {/* Column 2: Contact/Support card (5 cols) */}
+          <div className="md:col-span-5 flex flex-col items-center md:items-start w-full">
+            <div className="relative w-full max-w-sm bg-black/20 backdrop-blur-xl p-6 rounded-2xl border border-white/10 hover:border-[#FFC30B]/30 transition-all duration-300 shadow-2xl group mx-auto md:mr-0">
               {/* Online indicator badge */}
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider w-fit mb-4">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/25 text-emerald-300 text-[10px] font-bold uppercase tracking-wider w-fit mb-4">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -996,7 +981,7 @@ function Footer() {
                 </span>
                 <a
                   href="tel:8500055870"
-                  className="text-3xl font-black text-white hover:text-[#FFC30B] transition-colors duration-300 font-mono tracking-wider block"
+                  className="text-2xl sm:text-3xl font-black text-white hover:text-[#FFC30B] transition-colors duration-300 font-mono tracking-wider block"
                 >
                   85000 55870
                 </a>
@@ -1008,9 +993,9 @@ function Footer() {
                 <a
                   href="tel:8500055870"
                   className="
-                    flex items-center justify-center gap-2 py-3 px-4 rounded-xl
-                    bg-[#FFC30B] border border-[#FFC30B]/20 text-black
-                    hover:brightness-110 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,195,11,0.4)]
+                    flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl
+                    bg-[#FFC30B] border border-[#FFC30B]/20 text-slate-950
+                    hover:brightness-110 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,195,11,0.3)]
                     transition-all duration-300 text-xs font-bold uppercase tracking-wider
                   "
                   title="Call Support"
@@ -1027,9 +1012,9 @@ function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    flex items-center justify-center gap-2 py-3 px-4 rounded-xl
+                    flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl
                     bg-[#25D366] border border-[#25D366]/20 text-white
-                    hover:brightness-110 hover:scale-105 hover:shadow-[0_0_15px_rgba(37,211,102,0.4)]
+                    hover:brightness-110 hover:scale-105 hover:shadow-[0_0_15px_rgba(37,211,102,0.3)]
                     transition-all duration-300 text-xs font-bold uppercase tracking-wider
                   "
                   title="Chat on WhatsApp"
@@ -1041,7 +1026,7 @@ function Footer() {
                 </a>
               </div>
               
-              <p className="text-white/70 text-xs font-normal leading-relaxed text-left border-t border-white/5 pt-4">
+              <p className="text-white/80 text-xs font-normal leading-relaxed text-left border-t border-white/10 pt-4">
                 Connect with our team for active volunteer onboarding, platform support, and grassroots advocacy tools.
               </p>
             </div>
@@ -1053,7 +1038,7 @@ function Footer() {
         <div className="h-px w-full bg-white/10 mb-6"></div>
 
         {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/70">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/80">
           <p>© 2026 Strategy Pulse. All rights reserved.</p>
           <p className="text-[#FFC30B] font-medium tracking-wide">
             Empowering Grassroots Democracy 🇮🇳
