@@ -2,7 +2,7 @@ import "./globals.css";
 
 // Basic SEO metadata
 export const metadata = {
-  title: "Strategy Pulse | Empowering Grassroots Volunteers & Community Workers",
+  title: "STRATEGIC PULSE | Empowering Grassroots Volunteers & Community Workers",
   description: "Supporting dedicated political volunteers, booth-level agents, and community organizers with micro-jobs, smart execution tools, and actionable recognition.",
   keywords: [
     "grassroots empowerment",
@@ -10,7 +10,7 @@ export const metadata = {
     "community support",
     "booth agents",
     "micro-jobs for volunteers",
-    "strategy pulse"
+    "strategic pulse"
   ],
 };
 

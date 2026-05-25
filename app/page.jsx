@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 // =========================================================================
@@ -25,7 +25,7 @@ function Splash() {
       <div className="animate-fade-in-out">
         <img
           src="/images/logo.png"
-          alt="Strategy Pulse Logo"
+          alt="STRATEGIC PULSE Logo"
           className="w-64 h-64 object-contain"
         />
       </div>
@@ -51,10 +51,10 @@ function Navbar() {
         <a href="#hero" className="font-extrabold text-lg sm:text-xl lg:text-2xl tracking-tight flex items-center gap-1.5 sm:gap-2 whitespace-nowrap">
           <img 
             src="/images/logo.png" 
-            alt="Strategic Pulse Logo" 
+            alt="STRATEGIC PULSE Logo" 
             className="rounded-full w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-cover" 
           />
-          <span className="text-[#FFC30B]">Strategy</span> Pulse
+          <span className="text-[#FFC30B]">STRATEGIC</span> PULSE
         </a>
 
         <nav className="hidden md:flex gap-2 lg:gap-4 font-semibold text-xs lg:text-sm">
@@ -675,7 +675,7 @@ function Testimonials() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 border-l-4 border-l-[#B30006] shadow-sm hover:shadow-md transition-shadow">
             <p className="text-gray-600 italic mb-6 leading-relaxed text-base">
-              &ldquo;Before Strategy Pulse, we did endless ground work without any formal recognition or compensation. Now, every survey and booth activity is logged, and I receive direct monthly support. It empowers my whole team!&rdquo;
+              &ldquo;Before STRATEGIC PULSE, we did endless ground work without any formal recognition or compensation. Now, every survey and booth activity is logged, and I receive direct monthly support. It empowers my whole team!&rdquo;
             </p>
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-[#B30006] flex items-center justify-center font-bold text-white text-lg shrink-0">
@@ -745,7 +745,7 @@ function Impact() {
 function FAQ() {
   const faqs = [
     {
-      question: "Who can register as a volunteer on Strategy Pulse?",
+      question: "Who can register as a volunteer on STRATEGIC PULSE?",
       answer: "Any dedicated citizen, booth worker, or local campaign organizer looking to support their community and participate in local governance."
     },
     {
@@ -881,8 +881,8 @@ function Footer() {
             <p className="uppercase tracking-[0.25em] text-[10px] text-[#FFC30B] font-bold mb-3">
               Grassroots • Technology • Empowerment
             </p>
-            <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-4 text-white">
-              <span className="text-[#FFC30B]">Strategy</span> Pulse
+              <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-4 text-white">
+              <span className="text-[#FFC30B]">STRATEGIC</span> PULSE
             </h3>
             <p className="text-white/85 text-sm md:text-base leading-relaxed mb-6 max-w-lg">
               Building the future of grassroots political empowerment with real support,
@@ -959,6 +959,29 @@ function Footer() {
               >
                 <FaXTwitter className="text-white text-lg" />
               </a>
+
+              {/* YouTube */}
+              <a
+                href="https://www.youtube.com/@koushikprince1324"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="
+                  w-11 h-11 rounded-xl
+                  bg-white/10
+                  backdrop-blur-md
+                  border border-white/10
+                  flex items-center justify-center
+                  hover:scale-110 hover:-translate-y-1
+                  hover:bg-red-600
+                  hover:border-transparent
+                  transition-all duration-300
+                  shadow-md
+                "
+              >
+                <FaYoutube className="text-white text-lg" />
+              </a>
+              
             </div>
           </div>
 
@@ -1039,7 +1062,7 @@ function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/80">
-          <p>© 2026 Strategy Pulse. All rights reserved.</p>
+          <p>© 2026 STRATEGIC PULSE. All rights reserved.</p>
           <p className="text-[#FFC30B] font-medium tracking-wide">
             Empowering Grassroots Democracy 🇮🇳
           </p>
